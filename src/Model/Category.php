@@ -12,7 +12,6 @@ class Category extends Entity
     public function __construct(Database $database)
     {
         parent::__construct($database);
-        $this->table = "category";
     }
 
     public function getName(): string
