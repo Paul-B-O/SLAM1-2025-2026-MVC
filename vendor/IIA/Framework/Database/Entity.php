@@ -44,8 +44,10 @@ class Entity
         if (count($where) > 0) {
             $request = $request." WHERE ".$where;
             foreach ($where as $key => $value) {
-                $request = $request.$key." = ".$value;
+                $request = $request.$key." = ".$value." AND ";
             }
+
+            $request = substr($request, 0, -5);
         }
         if (count($order) > 0) {
             $request = $request." ORDER BY ".$order;
